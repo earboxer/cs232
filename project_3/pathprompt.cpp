@@ -34,10 +34,29 @@ class Prompt
   public:
     Prompt(){ cwd = getcwd(cwdbuf, 255); };
     string get() const{ return cwd; };
-    void cd( string dir ){ chdir( dir.c_str() ); cwd = getcwd(cwdbuf, 255); };
+    int cd( string dir );
   private:
     string cwd;
     char cwdbuf[255];
+};
+
+/**
+ * @brief Change directories
+ * @return 0 if successful, -1 if failed.
+ */
+int Prompt::cd( string dir )
+{
+  int success;
+  success = chdir( dir.c_str() );
+  if( success == 0 )
+  {
+    cwd = getcwd(cwdbuf, 255);
+    return 0;
+  }
+  else
+  {
+    return -1;
+  }
 };
 
 /**
