@@ -40,5 +40,10 @@ int main()
   cout << "testing Prompt::get()...\n";
   cout << "cwd is: " << my_prompt.get() << "\n";
 
+  cout << "testing Prompt::cd()...\n";
+  my_prompt.cd( ".." );
+  cout << "cwd is: " << my_prompt.get() << "\n";
+  my_prompt.cd( "../.." );
+  cout << "cwd is: " << my_prompt.get() << "\n";
   return 0;
 }
