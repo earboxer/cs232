@@ -12,6 +12,10 @@
 #include <unistd.h>
 using namespace std;
 
+/**
+ * @brief Keeps track of directories in your executable path.
+ *  Searches for programs in these paths.
+ */
 class Path
 {
   public:
@@ -22,6 +26,9 @@ class Path
     vector<string> directories;
 };
 
+/**
+ * @brief Maintains and manipulates your current working directory.
+ */
 class Prompt
 {
   public:
