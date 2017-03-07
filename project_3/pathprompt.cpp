@@ -30,8 +30,7 @@ class Prompt
     void cd( string dir ){ chdir( dir.c_str() ); cwd = getcwd(cwdbuf, 255); };
   private:
     string cwd;
-    char* ptr;
-    char* cwdbuf;
+    char cwdbuf[255];
 };
 
 /**
