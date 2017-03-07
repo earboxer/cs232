@@ -1,2 +1,0 @@
-tm28     pts/2        2017-02-19 15:38 (resnet73-71.calvin.edu)
-tm28     pts/6        2017-02-20 09:48 (dhcp154-173.calvin.edu)

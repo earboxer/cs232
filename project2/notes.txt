@@ -1,8 +1,0 @@
-commands to use:
-arp -e -- list all computers online currently
-
-who | wc -l --list number of users on the machine
-
-"> filename" --send output to a local file
-
-ssh user@host 'command' --run command remotely without logging in
