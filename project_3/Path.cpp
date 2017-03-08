@@ -1,7 +1,7 @@
 /**
  * @author: Zach DeCook (zjd7)
  * @date: March 6, 2017
- * @brief pathprompt.cpp defines the Path and Prompt classes.
+ * @brief Path.cpp implements the Path class.
  */
 #include "Path.h"
 

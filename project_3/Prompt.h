@@ -1,3 +1,8 @@
+/**
+ * @author: Zach DeCook (zjd7)
+ * @date: March 6, 2017
+ * @brief Prompt.h defines the Prompt class.
+ */
 class Prompt
 {
   public:

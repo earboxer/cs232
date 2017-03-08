@@ -16,9 +16,19 @@ class CommandLine {
     string buf;
     while (ss >> buf) tokens.push_back(buf);
   };
+  
+  //gets the first word in the string
   char* getCommand() const;
+
+  //gets the number of arguments provided
   int getArgCount() const;
+
+  //gets a pointer to an array of the strings
   char** getArgVector() const;
+
+  //returns a specific word in the vector
   char* getArgVector(int i) const;
+
+  //checks if there is an amperstand in the string
   bool noAmpersand() const;
 };
