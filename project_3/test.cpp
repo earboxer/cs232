@@ -5,7 +5,8 @@
  */
 #include <string>
 #include <iostream>
-#include "pathprompt.cpp"
+#include "Path.h"
+#include "Prompt.h"
 
 using namespace std;
 

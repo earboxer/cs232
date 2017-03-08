@@ -3,35 +3,7 @@
  * @date: March 6, 2017
  * @brief pathprompt.cpp defines the Path and Prompt classes.
  */
-#include <string>
-#include <cstring>
-#include <vector>
-#include <stdio.h>
-#include <stdlib.h>
-#include <dirent.h>
-#include <unistd.h>
-using namespace std;
-
-class Path
-{
-  public:
-    Path();
-    int find( const string& program ) const;
-    string getDirectory( int i ) const;
-  private:
-    vector<string> directories;
-};
-
-class Prompt
-{
-  public:
-    Prompt(){ cwd = getcwd(cwdbuf, 255); };
-    string get() const{ return cwd; };
-  private:
-    string cwd;
-    char* ptr;
-    char* cwdbuf;
-};
+#include "Path.h"
 
 /**
  * @brief Initialize Path, store all executable paths in a private variable.
@@ -91,4 +63,3 @@ string Path::getDirectory( int i ) const
 {
   return directories[i];
 }
-
