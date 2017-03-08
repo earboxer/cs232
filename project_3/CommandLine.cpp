@@ -13,7 +13,10 @@ char** CommandLine::getArgVector() const {
   //return tokens;
   char** arr = new char*[tokens.size()];
   for(int i = 0; i < tokens.size(); i++) {
-    arr[i] = (char*)tokens[i].c_str();
+    if (strcmp(tokens[i].c_str(), "&") != 0) {
+        arr[i] = (char*)tokens[i].c_str();
+    }
+
   }
   return arr;
 }
