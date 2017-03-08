@@ -1,6 +1,7 @@
 #include "CommandLine.h"
 #include "Path.h"
 #include "Prompt.h"
+#include <sys/wait.h>
 
 class MZShell {
 private:
@@ -9,7 +10,7 @@ private:
 
 public:
   //initialize the shell
-  MZShell();
+  MZShell() {};
 
   //run the shell
   void run();

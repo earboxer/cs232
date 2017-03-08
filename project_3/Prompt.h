@@ -3,6 +3,15 @@
  * @date: March 6, 2017
  * @brief Prompt.h defines the Prompt class.
  */
+ #include <string>
+ #include <cstring>
+ #include <vector>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <dirent.h>
+ #include <unistd.h>
+ using namespace std;
+
 class Prompt
 {
   public:
