@@ -20,7 +20,7 @@ int main()
 
   cout << "testing Path::find()...\n";
   int index = -1;
-  string command = "less";
+  string command = "sls";
   index = path.find(command);
   if ( index == -1 )
   {
