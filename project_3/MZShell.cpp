@@ -26,15 +26,6 @@ void MZShell::run() {
     if (commandline.noAmpersand()) {
       wait(NULL);
     }
-
-
-    // if (c.noAmpersand) {
-    //   //execute normally
-    // } else {
-    //   //fork process
-    // }
-
-
   }
 }
 
