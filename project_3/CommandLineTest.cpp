@@ -1,3 +1,8 @@
+/*
+Written by: Mitch Stark
+3/10/17
+Purpose: Test the CommandLine class
+*/
 #include "CommandLine.h"
 int main() {
   CommandLine c = CommandLine(std::cin);

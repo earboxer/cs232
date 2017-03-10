@@ -1,3 +1,9 @@
+/*
+Written by: Mitch Stark
+3/10/17
+Purpose: Implement the MZShell class
+*/
+
 #include "MZShell.h"
 #include  <stdio.h>
 #include  <sys/types.h>

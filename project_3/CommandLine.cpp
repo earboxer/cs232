@@ -1,3 +1,8 @@
+/*
+Written by: Mitch Stark
+3/10/17
+Purpose: Define the CommandLine class
+*/
 #include "CommandLine.h"
 
 char* CommandLine::getCommand() const {

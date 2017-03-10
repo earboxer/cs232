@@ -1,3 +1,9 @@
+/*
+Written by: Mitch Stark
+3/10/17
+Purpose: Implement the CommandLine class
+*/
+
 #include<iostream>
 #include <vector>
 #include <sstream>
@@ -16,7 +22,7 @@ class CommandLine {
     string buf;
     while (ss >> buf) tokens.push_back(buf);
   };
-  
+
   //gets the first word in the string
   char* getCommand() const;
 
