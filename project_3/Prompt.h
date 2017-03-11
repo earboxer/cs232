@@ -12,6 +12,9 @@
  #include <unistd.h>
  using namespace std;
 
+/**
+ * @brief Maintains and manipulates your current working directory.
+ */
 class Prompt
 {
   public:
