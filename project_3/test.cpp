@@ -18,16 +18,31 @@ int main()
   Path path;
   cout << "Path created.\n";
 
-  cout << "testing Path::find()...\n";
+  cout << "testing Path::find() for failure...\n";
   int index = -1;
   string command = "sls";
   index = path.find(command);
   if ( index == -1 )
   {
     cout << command << " not found\n";
+  }
+  else
+  {
+    cout << command << " found at " << index << ".\n";
+  }
+
+  cout << "testing Path::find() for success...\n";
+  command = "ls";
+  index = path.find(command);
+  if ( index == -1 )
+  {
+    cout << command << " not found\n";
     return 1;
   }
-  cout << command << " found at " << index << "\n";
+  else
+  {
+    cout << command << " found at " << index << ".\n";
+  }
 
   cout << "testing Path::getDirectory()...\n";
   string directory;
