@@ -40,7 +40,7 @@ int Path::find( const string& program ) const
     dirp = opendir( directories[i].c_str() );
     if ( dirp != NULL )
     {
-      while ( dp = readdir( dirp ) )
+      while ( (dp = readdir( dirp )) )
       {
         if (strlen(dp->d_name) == program.length()
           && program.compare(dp->d_name) == 0)
@@ -49,8 +49,8 @@ int Path::find( const string& program ) const
           return i;
         }
       }
+      (void)closedir(dirp);
     }
-    (void)closedir(dirp);
   }
   return -1;
 }
