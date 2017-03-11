@@ -19,6 +19,5 @@ class Prompt
     string get() const{ return cwd; };
   private:
     string cwd;
-    char* ptr;
-    char* cwdbuf;
+    char cwdbuf[255];
 };
