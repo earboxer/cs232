@@ -49,6 +49,16 @@ int main()
   directory = path.getDirectory( index );
   cout << "Directory at " << index << " was " << directory << "\n";
 
+  cout << "testing Path::getDirectory() for exceptions...\n";
+  try
+  {
+    directory = path.getDirectory( -1 );
+  }
+  catch ( out_of_range e )
+  {
+    cout << "Exception rightfully caught: '" << e.what() << "'.\n";
+  }
+
   cout << "testing Prompt constructor...\n";
   Prompt my_prompt;
   cout << "prompt created\n";

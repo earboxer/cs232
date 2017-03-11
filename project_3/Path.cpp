@@ -61,5 +61,9 @@ int Path::find( const string& program ) const
  */
 string Path::getDirectory( int i ) const
 {
-  return directories[i];
+  if ( i >= 0 && i < directories.size() )
+  {
+    return directories[i];
+  }
+  throw out_of_range( "No element with that index" );
 }
