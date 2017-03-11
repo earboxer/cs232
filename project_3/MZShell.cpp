@@ -41,8 +41,3 @@ void MZShell::run() {
     }
   }
 }
-
-int main() {
-  MZShell m;
-  m.run();
-}
