@@ -20,6 +20,16 @@ void MZShell::run() {
       return;
     }
 
+    // if ((strcmp(commandline.getCommand(), "cd") == 0) && (commandline.getArgVector()[1] != NULL)) {
+    //   int response = chdir(commandline.getArgVector(1));
+    //   if (response < 0) {
+    //     cerr << "Can't find dir: " << commandline.getArgVector(1) << endl;
+    //   } else {
+    //     pr = Prompt();
+    //   }
+    //   continue;
+    // }
+
     int status;
     char command[261];
     if (pa.find(commandline.getCommand()) != -1) {
@@ -30,13 +40,15 @@ void MZShell::run() {
       pid_t pid_ps = fork();
       if (pid_ps == 0) {
           execve(command, commandline.getArgVector(), NULL);
-      }
-
-
-      int status;
-      //behavior we want, just need the print statements
-      if (commandline.noAmpersand()) {
-        waitpid(pid_ps, &status, 0);
+      } else if (pid_ps == -1) {
+          cout << "Fork failure, something went wrong..." << endl;
+      } else {
+          //parent process
+          int status;
+          //behavior we want, just need the print statements
+          if (commandline.noAmpersand()) {
+            waitpid(pid_ps, &status, 0);
+          }
       }
     }
   }
