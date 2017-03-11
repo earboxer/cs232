@@ -29,12 +29,14 @@ void MZShell::run() {
       strcat(command, commandline.getCommand());
       pid_t pid_ps = fork();
       if (pid_ps == 0) {
-          execv(command, commandline.getArgVector());
+          execve(command, commandline.getArgVector(), NULL);
       }
 
+
+      int status;
       //behavior we want, just need the print statements
-      if (commandline.noAmpersand() && pid_ps == 0) {
-        wait(NULL);
+      if (commandline.noAmpersand()) {
+        waitpid(pid_ps, &status, 0);
       }
     }
   }
