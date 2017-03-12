@@ -1,12 +1,12 @@
 /*
 Created by: Mitch Stark and Zach DeCook
-Purpose: run the MZShell
+Purpose: run the ZMShell
 3/12/17
 */
 
-#include "MZShell.h"
+#include "ZMShell.h"
 
 int main() {
-  MZShell m;
+  ZMShell m;
   m.run();
 }

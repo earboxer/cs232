@@ -19,9 +19,9 @@ class Prompt
 {
   public:
     Prompt(){ cwd = getcwd(cwdbuf, 255); };
-    string get() const{ return cwd; };
+    string get();
     int cd( string dir );
   private:
     string cwd;
-    char cwdbuf[255];
+    char cwdbuf[256];
 };

@@ -23,3 +23,12 @@ int Prompt::cd( string dir )
     return -1;
   }
 };
+
+/**
+ * @brief Return the current directory
+ */
+string Prompt::get()
+{
+  cwd = getcwd(cwdbuf, 255);
+  return cwd;
+}
