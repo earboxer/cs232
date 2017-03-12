@@ -20,15 +20,15 @@ void MZShell::run() {
       return;
     }
 
-    // if ((strcmp(commandline.getCommand(), "cd") == 0) && (commandline.getArgVector()[1] != NULL)) {
-    //   int response = chdir(commandline.getArgVector(1));
-    //   if (response < 0) {
-    //     cerr << "Can't find dir: " << commandline.getArgVector(1) << endl;
-    //   } else {
-    //     pr = Prompt();
-    //   }
-    //   continue;
-    // }
+    if ((strcmp(commandline.getCommand(), "cd") == 0) && (commandline.getArgVector()[1] != NULL)) {
+      int response = chdir(commandline.getArgVector(1));
+      if (response < 0) {
+        cerr << "Can't find dir: " << commandline.getArgVector(1) << endl;
+      } else {
+        pr = Prompt();
+      }
+      continue;
+    }
 
     int status;
     char command[261];

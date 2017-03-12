@@ -8,6 +8,7 @@ Purpose: Implement the CommandLine class
 #include <vector>
 #include <sstream>
 #include <string>
+#include <cstring>
 using namespace std;
 
 class CommandLine {
