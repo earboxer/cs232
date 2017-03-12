@@ -16,9 +16,12 @@ void MZShell::run() {
     cout << pr.get() << endl << "]" << flush;
     CommandLine commandline(std::cin);
 
+
     if (strcmp(commandline.getCommand(), "exit") == 0) {
       return;
     }
+
+
 
     if ((strcmp(commandline.getCommand(), "cd") == 0) && (commandline.getArgVector()[1] != NULL)) {
       int response = chdir(commandline.getArgVector(1));
@@ -30,26 +33,35 @@ void MZShell::run() {
       continue;
     }
 
-    int status;
+    //This code is causing us problems, I have no idea why?
+    // if (pa.find(commandline.getCommand()) == -1) {
+    //     continue;
+    // }
+
     char command[261];
-    if (pa.find(commandline.getCommand()) != -1) {
-      char* command_dir = (char*)pa.getDirectory(pa.find(commandline.getCommand())).c_str();
-      strcat(command_dir, "/");
-      strcpy(command, command_dir);
-      strcat(command, commandline.getCommand());
-      pid_t pid_ps = fork();
-      if (pid_ps == 0) {
-          execve(command, commandline.getArgVector(), NULL);
-      } else if (pid_ps == -1) {
-          cout << "Fork failure, something went wrong..." << endl;
-      } else {
-          //parent process
-          int status;
-          //behavior we want, just need the print statements
-          if (commandline.noAmpersand()) {
-            waitpid(pid_ps, &status, 0);
-          }
-      }
+    char* command_dir = (char*)"/bin"; //(char*)pa.getDirectory(pa.find(commandline.getCommand())).c_str();
+    // cout << "here" << flush;
+    // strcat(command_dir, "/");
+    // cout << "2" << flush;
+    strcpy(command, "/bin/");
+    strcat(command, commandline.getCommand());
+
+    cout << "command: " << command << endl << endl << endl << flush;
+
+    if (commandline.getArgVector()[1] != NULL) {
+        cout << "arguments: " << commandline.getArgVector()[1] << endl << endl << endl << flush;
+    }
+
+    pid_t pid_ps = fork();
+    int status;
+
+    if (pid_ps == 0) {
+        execve(command, commandline.getArgVector(), NULL);
+    }
+
+
+    if (commandline.noAmpersand()) {
+      waitpid(pid_ps, &status, 0);
     }
   }
 }
