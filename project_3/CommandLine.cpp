@@ -14,7 +14,6 @@ int CommandLine::getArgCount() const {
 }
 
 char** CommandLine::getArgVector() const {
-  //if allowed
   //return tokens;
   char** arr = new char*[tokens.size()];
   for(int i = 0; i < tokens.size(); i++) {
